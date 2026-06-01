@@ -2,6 +2,8 @@
 
 寵物美容／洗澡的線上預約系統（純前端練習專案）。使用者可以選服務、挑日期時段、填寫寵物與飼主資料、送出預約，並在「我的預約」管理或取消。
 
+**🔗 線上 Demo：[paw-booking-lilac.vercel.app](https://paw-booking-lilac.vercel.app/)**
+
 > 純前端專案，資料以瀏覽器 `localStorage` 模擬後端儲存，重新整理不會遺失。
 
 ## 技術棧
