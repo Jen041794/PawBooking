@@ -1,0 +1,206 @@
+// 健康自然系配色（沿用 PawLog 風格）覆寫 Bootstrap 變數
+@use "bootstrap/scss/bootstrap" with (
+  $primary: #5b9279,   // 草綠（主色）
+  $secondary: #a3c9a8, // 淺綠
+  $success: #6fb98f,
+  $danger: #d98880,
+  $body-bg: #f6faf6,    // 淡綠背景
+  $border-radius: 0.75rem
+);
+
+// 頁尾連結 hover 變主色
+.app-footer a:hover {
+  color: var(--bs-primary) !important;
+}
+
+// 手機尺寸（< md）：漢堡選單展開時浮在頁面上方，不往下擠內容
+@media (max-width: 767.98px) {
+  .navbar {
+    position: relative;
+  }
+
+  .navbar .navbar-collapse {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    z-index: 1030;
+    background: #fff;
+    padding: 0.5rem 1rem 1rem;
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+  }
+}
+
+// 404 頁面動畫
+.notfound {
+  .notfound-emoji {
+    font-size: 5rem;
+    display: inline-block;
+    animation: nf-bounce 1.2s ease-in-out infinite;
+  }
+
+  .notfound-code {
+    font-size: 4rem;
+    letter-spacing: 0.15em;
+    margin: 0.5rem 0;
+  }
+
+  .notfound-paws {
+    margin-top: 1.75rem;
+    font-size: 1.5rem;
+    animation: nf-walk 2.4s linear infinite;
+  }
+}
+
+// 小狗上下彈跳、左右擺動
+@keyframes nf-bounce {
+  0%,
+  100% {
+    transform: translateY(0) rotate(-4deg);
+  }
+  50% {
+    transform: translateY(-18px) rotate(4deg);
+  }
+}
+
+// 腳印由左走到右、淡入淡出
+@keyframes nf-walk {
+  0% {
+    transform: translateX(-30px);
+    opacity: 0;
+  }
+  50% {
+    opacity: 0.55;
+  }
+  100% {
+    transform: translateX(30px);
+    opacity: 0;
+  }
+}
+
+// 首頁 banner
+.hero-banner {
+  background: linear-gradient(135deg, #5b9279 0%, #6fb98f 100%);
+}
+
+// 步驟進度條
+.step-bubble {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #fff;
+  flex: none;
+  background: var(--bs-gray-400);
+}
+.step-active {
+  background: var(--bs-primary);
+}
+.step-done {
+  background: var(--bs-success);
+}
+.step-line {
+  width: 28px;
+  height: 2px;
+  margin: 0 0.5rem;
+  background: var(--bs-gray-300);
+}
+.step-line-done {
+  background: var(--bs-success);
+}
+.step-label {
+  white-space: nowrap;
+}
+
+// 關於我們頁
+.about-card {
+  border-radius: 0.5rem; // 收斂圓角，不要太圓
+}
+
+.about-nav .nav-link {
+  color: var(--bs-body-color);
+  text-align: left;
+  border-radius: 0.5rem;
+  transition: background-color 0.15s ease;
+
+  &:hover:not(.active) {
+    background-color: var(--bs-secondary-bg);
+  }
+}
+
+// 右欄區塊標題：左側加一條主色條
+.about-heading {
+  border-left: 4px solid var(--bs-primary);
+  padding-left: 0.6rem;
+  margin-bottom: 1rem;
+}
+
+// 聯絡資訊卡片
+.contact-card {
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1) !important;
+  }
+
+  .contact-bubble {
+    width: 2.6rem;
+    height: 2.6rem;
+    flex: none;
+    border-radius: 50%;
+    background: var(--bs-success-bg-subtle);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.3rem;
+  }
+}
+
+// 步驟之間的箭頭
+.step-arrow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.6rem;
+  font-weight: 700;
+  line-height: 1;
+  padding: 0.25rem 0.4rem;
+}
+
+// 預約步驟卡片
+.step-card {
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1) !important;
+  }
+
+  .step-icon {
+    width: 2.6rem;
+    height: 2.6rem;
+    flex: none;
+    border-radius: 50%;
+    background: var(--bs-success-bg-subtle);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.3rem;
+  }
+}
+
+// 服務卡片的滑入互動
+.service-card {
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+  cursor: pointer;
+
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1) !important;
+  }
+}
