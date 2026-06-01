@@ -6,6 +6,10 @@
 
 > 純前端專案，資料以瀏覽器 `localStorage` 模擬後端儲存，重新整理不會遺失。
 
+## 畫面預覽
+
+![毛孩預約 PawBooking 畫面](public/petdemo.png)
+
 ## 技術棧
 
 - **Vite + React 19** — 前端框架與開發環境
